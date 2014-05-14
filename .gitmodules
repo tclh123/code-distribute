@@ -4,3 +4,6 @@
 [submodule "proxy"]
 	path = proxy
 	url = git@github.com:tclh123/tproxy.git
+[submodule "node/jagare-rpc"]
+	path = node/jagare-rpc
+	url = git@github.com:tclh123/jagare-rpc.git
