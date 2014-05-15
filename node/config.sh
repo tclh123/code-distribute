@@ -1,0 +1,10 @@
+#!/bin/bash
+
+here="$(cd "${0%/*}"; pwd)"
+
+REPOS_PATH=$here/tmp
+
+GIT_SERVER_HTTP_PORT=2200
+GIT_SERVER_SSH_PORT=2201
+
+GIT_RPC_SERVER_PORT=7303
