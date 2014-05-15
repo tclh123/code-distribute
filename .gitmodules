@@ -1,9 +1,6 @@
 [submodule "node/maria"]
 	path = node/maria
 	url = git@github.com:tclh123/maria.git
-[submodule "tproxy"]
-	path = proxy/tproxy
-	url = git@github.com:tclh123/tproxy.git
 [submodule "node/jagare-rpc"]
 	path = node/jagare-rpc
 	url = git@github.com:tclh123/jagare-rpc.git
