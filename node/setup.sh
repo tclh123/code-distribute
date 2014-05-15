@@ -89,6 +89,7 @@ case $option in
     run
     ;;
   "stop")
+    echo "into stop)"
     kill_by_port $GIT_SERVER_HTTP_PORT
     kill_by_port $GIT_SERVER_SSH_PORT
 
