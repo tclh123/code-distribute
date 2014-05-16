@@ -33,7 +33,14 @@ init () {
 }
 
 run () {
-  echo "run"
+  cd $here
+
+  if ! [[ -d log ]]; then
+    mkdir log
+  fi
+
+  echo "run tproxy ..."
+  ./tproxy/venv/bin/tproxy routing_script.py -b 0.0.0.0:$TPROXY_PORT > log/tproxy.log 2>&1 &
 }
 
 kill_by_port () {
