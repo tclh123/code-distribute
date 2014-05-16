@@ -16,3 +16,11 @@ cd node
 ./setup.sh init
 ./setup.sh
 ```
+
+## Setup Proxy
+
+```
+cd proxy
+./setup.sh init
+./setup.sh
+```
