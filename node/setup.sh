@@ -48,11 +48,16 @@ run_git_rpc_server () {
   source ./jagare-rpc/venv/bin/activate
 
   python ./jagare-rpc/devserver.py > log/jagare-rpc.log 2>&1 &
+
+  echo "jagare-rpc listen on port 7303 ..."
 }
 
 run_git_server () {
   ./maria/venv/bin/run-maria -p $GIT_SERVER_HTTP_PORT -m http --repos_path $REPOS_PATH > log/maria-http.log 2>&1 &
   ./maria/venv/bin/run-maria -p $GIT_SERVER_SSH_PORT --host-key=./maria/examples/host.key -m ssh --repos_path $REPOS_PATH > log/maria-ssh.log 2>&1 &
+
+  echo "maria(http) listen on port $GIT_SERVER_HTTP_PORT ..."
+  echo "maria(ssh) listen on port $GIT_SERVER_SSH_PORT ..."
 }
 
 run () {
