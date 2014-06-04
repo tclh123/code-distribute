@@ -7,8 +7,16 @@ from router.router import Router
 re_user_agent = re.compile("User\-Agent: git/.*")
 router = Router()
 
+PROTOCOL_TO_PORT = {
+    'http': 2200,
+    'ssh':  2201
+}
+
 
 def proxy(data):
+    # FIXME: DEBUG
+    print data
+
     lines = data.splitlines()
     if not re_user_agent.match(lines[1]):
         return None
@@ -24,7 +32,8 @@ def proxy(data):
     else:
         # TODO: support ssh
         protocol = 'ssh'
-    host = router.lookup(project_name, protocol)
+
+    host = (router.lookup(project_name), PROTOCOL_TO_PORT[protocol])
     if host:
         return {"remote": host}
     return None
