@@ -41,11 +41,12 @@ run () {
 
   echo "run tproxy ..."
   ./tproxy/venv/bin/tproxy routing_script.py -b 0.0.0.0:$TPROXY_PORT > log/tproxy.log 2>&1 &
+  echo "tproxy listen on 0.0.0.0:$TPROXY_PORT ..."
 }
 
 kill_by_port () {
   port=$1
-  echo "stop by $port"
+  echo "stop by port $port"
   kill -9 `lsof -i:$port -t`
 }
 
