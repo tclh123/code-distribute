@@ -47,9 +47,10 @@ init () {
 run_git_rpc_server () {
   source ./jagare-rpc/venv/bin/activate
 
+  # FIXME: $GIT_RPC_SERVER_PORT
   python ./jagare-rpc/devserver.py > log/jagare-rpc.log 2>&1 &
 
-  echo "jagare-rpc listen on port 7303 ..."
+  echo "jagare-rpc listen on port $GIT_RPC_SERVER_PORT ..."
 }
 
 run_git_server () {
