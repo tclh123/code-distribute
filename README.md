@@ -2,11 +2,10 @@
 
 ## Setup
 
-### fetch submodule
+### Quick-start
 
 ```
-git submodule init
-git submodule update
+./quick-start.sh
 ```
 
 ## Setup Node
